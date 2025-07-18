@@ -22,6 +22,10 @@ const userRouter = require("./routes/user.js");
 
 const dbUrl = process.env.ATLASDB_URL;
 
+if (!dbUrl) {
+    throw new Error("ATLASDB_URL not set in environment variables. Please check your .env file.");
+}
+
 main().then(() => {
     console.log("connected to DB");
 }).catch((err) => {
