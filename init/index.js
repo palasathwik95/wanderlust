@@ -1,5 +1,6 @@
 if(process.env.NODE_ENV != "production") {
-    require('dotenv').config();
+    require('dotenv').config({ path: __dirname + '/../.env' });
+
 }
 
 const mongoose = require("mongoose");
@@ -25,4 +26,4 @@ const initDB = async () => {
     console.log("data was initialized");
 }
 
-// initDB();
+initDB();

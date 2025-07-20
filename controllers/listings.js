@@ -2,9 +2,10 @@ const Listing = require("../models/listing");
 const ExpressError = require("../utils/ExpressError.js");
 const { listingSchema } = require("../schema.js");
 
+
 module.exports.index = async (req, res) => {
     const allListings = await Listing.find({});
-    res.render("listings/index.ejs", {allListings});
+    res.render("listings/index.ejs", { allListings});
 }
 
 module.exports.renderNewForm = (req, res) => {
